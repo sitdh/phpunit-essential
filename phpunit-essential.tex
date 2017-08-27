@@ -2,13 +2,16 @@
 
 % Presento style file
 \usepackage{config/presento}
+\usepackage{graphicx}
+
+\graphicspath{ {images/} }
 
 % custom command and packages
 \input{config/custom-command}
 
 % Information
 \title{PHPUnit}
-\subtitle{}
+\subtitle{The PHP Testing Framework}
 \author{Sitdhibong Laokok}
 \institute{Computer Engineering}
 \date{\today}
@@ -20,32 +23,118 @@
 \maketitle
 \end{frame}
 
+\begin{frame}[plain]{Outline}
+    \tableofcontents
+\end{frame}
+
+\section{Overview}
+\begin{frame}[plain]{V-Model}
+    \begin{figure}
+        \center
+        \includegraphics[width=\textwidth]{v-model}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[plain]{Why you should Test?}
+    \begin{fullpageitemize}
+        \item<1-> Increase confidence in change/maintaining code 
+        \item<2-> Code more reuseable 
+        \item<3-> Development is fast
+        \item<4-> Less of \textcolor{red}{CODE DEBT}
+        \item<5-> Debuging is easy
+        \item<6-> Code are more reliable
+    \end{fullpageitemize}
+\end{frame}
+
+\begin{frame}[plain]{Key qualities of a good unit test}
+    \begin{fullpageitemize}
+        \item<1-> Environment free
+        \item<2-> One at a time
+        \item<3-> No side effect
+        \item<4-> Assert the results
+        \item<5-> One at a time
+        \item<6-> Fast
+    \end{fullpageitemize}
+    % https://www.kenneth-truyers.net/2012/12/15/key-qualities-of-a-good-unit-test/
+\end{frame}
+
+\begin{frame}[plain]{Test case circle}
+    \begin{figure}
+        \center
+        \includegraphics[width=.9\textwidth]{failng-pass-refactor}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[plain]{Fixture}
+    \begin{fullpageitemize}
+        \item<1-> \color{colororange}{\inconsolatafont{setUpBeforeClass()}}
+        \item<2-> \color{colorhgray}{Test Class}
+        \item<3-> \color{colororange}{\inconsolatafont{setUp()}}
+        \item<4-> \color{colorhgray}{Test cases}
+        \item<5-> \color{colororange}{\inconsolatafont{tearDown()}}
+        \item<6-> \color{colorhgray}{Final test case}
+        \item<7-> \color{colororange}{\inconsolatafont{tearDownAfterClass()}}
+    \end{fullpageitemize}
+\end{frame}
+
+\section{Writing Test Case}
+\begin{frame}[plain]{Test Case's Structure}
+    \begin{fullpageitemize}
+        \item<1-> \em{\textcolor{gray}{Given}} \\
+            Set up \\
+
+        \item<2-> \em{\textcolor{gray}{When}} \\
+            Do something \\
+
+        \item<3-> \em{\textcolor{gray}{Then}} \\
+            assert
+    \end{fullpageitemize}
+\end{frame}
+
+\begin{frame}[plain]{Assert}
+    \hugetext{\[expected \iff actual\]}
+\end{frame}
+
+\begin{frame}[plain]{Assert}
+    \Large{
+        \inconsolatafont{ 
+        assert{\textcolor{red}{*}}(\$objtect, \\
+        ~~~~\$expected, \\
+        ~~~~\$actual, \\
+        ~~~~\em{"Description"})
+        }
+    }
+\end{frame}
+
+\section{Coding}
+\framecard[colororange]{{\color{white}\hugetext{Coding}}}
+
 % sections in the presentation
-\begin{frame}{Presento}
- \begin{fullpageitemize}
-  \item \begin{center}\largetext{The design is \underline{clean}}\end{center}
-  \item \begin{center}\largetext{The rules are \underline{simple}}\end{center}
-  \item \begin{center}\largetext{The code is \underline{extensible}}\end{center}
- \end{fullpageitemize}
-\end{frame}
-
-\begin{frame}{Open Source Fonts}
- \begin{fullpageitemize}
-  \item {\montserratfont This is Montserrat}
-  \item {\notosansfont This is Noto Sans}
-  \item {\latolightfont This is Lato (light)}
-  \item {\inconsolatafont This is inconsolata}
-  \item \textsc{This is Alegreya Sans small caps}
- \end{fullpageitemize}
-\end{frame}
-
-\begin{frame}{Color Palette}
- \begin{center}
-  \crule[colordgray] \crule[colorhgray] \crule[colorblue] \crule[colorgreen] \crule[colororange]
- \end{center}
-\end{frame}
-
-\framecard[colorgreen]{{\color{white}\hugetext{BIG BOLD TEXT}}}
+% \begin{frame}{Presento}
+%     \begin{fullpageitemize}
+%         \item \begin{center}\largetext{The design is \underline{clean}}\end{center}
+%         \item \begin{center}\largetext{The rules are \underline{simple}}\end{center}
+%         \item \begin{center}\largetext{The code is \underline{extensible}}\end{center}
+%     \end{fullpageitemize}
+% \end{frame}
+% 
+% \begin{frame}{Open Source Fonts}
+%     \begin{fullpageitemize}
+%         \item {\montserratfont This is Montserrat}
+%         \item {\notosansfont This is Noto Sans}
+%         \item {\latolightfont This is Lato (light)}
+%         \item {\inconsolatafont This is inconsolata}
+%         \item \textsc{This is Alegreya Sans small caps}
+%     \end{fullpageitemize}
+% \end{frame}
+% 
+% \begin{frame}{Color Palette}
+%     \begin{center}
+%         \crule[colordgray] \crule[colorhgray] \crule[colorblue] \crule[colorgreen] \crule[colororange]
+%     \end{center}
+% \end{frame}
+% 
+% \framecard[colorgreen]{{\color{white}\hugetext{BIG BOLD TEXT}}}
  
 % \framepic[0.8]{images/skeleton}{
 %  \begin{textblock}{7}(7,2.5)
