@@ -28,13 +28,6 @@
 \end{frame}
 
 \section{Overview}
-\begin{frame}[plain]{V-Model}
-    \begin{figure}
-        \center
-        \includegraphics[width=\textwidth]{v-model}
-    \end{figure}
-\end{frame}
-
 \begin{frame}[plain]{Why you should Test?}
     \begin{fullpageitemize}
         \item<1-> Increase confidence in change/maintaining code 
@@ -46,23 +39,61 @@
     \end{fullpageitemize}
 \end{frame}
 
+\begin{frame}[plain]{Manual test}
+    \begin{figure}
+        \center
+        \includegraphics[width=\textwidth]{normal-test}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[plain]{V-Model}
+    \begin{figure}
+        \center
+        \includegraphics[width=\textwidth]{v-model}
+    \end{figure}
+\end{frame}
+
 \begin{frame}[plain]{Key qualities of a good unit test}
     \begin{fullpageitemize}
         \item<1-> Environment free
         \item<2-> One at a time
         \item<3-> No side effect
         \item<4-> Assert the results
-        \item<5-> One at a time
-        \item<6-> Fast
+        \item<5-> Fast
     \end{fullpageitemize}
     % https://www.kenneth-truyers.net/2012/12/15/key-qualities-of-a-good-unit-test/
 \end{frame}
 
-\begin{frame}[plain]{Test case circle}
+\begin{frame}[plain]{Unit test mantra}
     \begin{figure}
         \center
         \includegraphics[width=.9\textwidth]{failng-pass-refactor}
+        \label{fig:failng-pass-refactor}
     \end{figure}
+\end{frame}
+
+\begin{frame}[plain]{Driver \& Stub}
+    \begin{figure}
+        \center
+        \includegraphics[height=.8\textheight]{driver-and-stub}
+        \label{fig:driver-and-stub}
+    \end{figure}
+\end{frame}
+
+\section{Writing Test Case}
+\begin{frame}[plain]{Core techniques}
+    \begin{fullpageitemize}
+        \item Using stubs to break dependencies
+        \item Interation testing using mock objects
+    \end{fullpageitemize}
+\end{frame}
+
+\begin{frame}[plain]{The pillars of good unit tests}
+    \begin{fullpageitemize}
+        \item Writing trustworthy tests
+        \item Writing maintainable tests
+        \item Writing readable tests
+    \end{fullpageitemize}
 \end{frame}
 
 \begin{frame}[plain]{Fixture}
@@ -77,7 +108,6 @@
     \end{fullpageitemize}
 \end{frame}
 
-\section{Writing Test Case}
 \begin{frame}[plain]{Test Case's Structure}
     \begin{fullpageitemize}
         \item<1-> \em{\textcolor{gray}{Given}} \\
@@ -98,8 +128,17 @@
 \begin{frame}[plain]{Assert}
     \Large{
         \inconsolatafont{ 
-        assert{\textcolor{red}{*}}(\$objtect, \\
-        ~~~~\$expected, \\
+        assert{\textcolor{red}{*}}(\$expected, \\
+        ~~~~\$actual, \\
+        ~~~~\em{"Description"})
+        }
+    }
+\end{frame}
+
+\begin{frame}[plain]{Assert - Example}
+    \Large{
+        \inconsolatafont{ 
+        assert{\textcolor{red}{*}}(\$expected, \\
         ~~~~\$actual, \\
         ~~~~\em{"Description"})
         }
@@ -108,6 +147,22 @@
 
 \section{Coding}
 \framecard[colororange]{{\color{white}\hugetext{Coding}}}
+
+\begin{frame}[plain]{High Level Design: Deployment}
+    \begin{figure}
+        \center
+        \includegraphics[width=0.7\textwidth]{deployment-grading-system}
+        \label{fig:deployment-grading-system}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[plain]{Low Level Design: Class diagram}
+    \begin{figure}
+        \center
+        \includegraphics[width=\textwidth]{class-diagram}
+        \label{fig:class-diagram}
+    \end{figure}
+\end{frame}
 
 % sections in the presentation
 % \begin{frame}{Presento}
@@ -141,4 +196,29 @@
 %     {\color{colorblue}\hugetext{\textbf{RUN!}}}
 %  \end{textblock}
 % }
+
+\begin{frame}[plain]{Books}
+    \begin{figure}
+        \center
+        \includegraphics[height=.7\textheight]{TDD-by-Example}
+        \label{fig:TDD-by-Example}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[plain]{Books}
+    \begin{figure}
+        \center
+        \includegraphics[height=.7\textheight]{TDD-with-Python}
+        \label{fig:TDD-with-Python}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[plain]{Books}
+    \begin{figure}
+        \center
+        \includegraphics[height=.7\textheight]{the-art-of-unit-testing}
+        \label{fig:the-art-of-unit-testing}
+    \end{figure}
+\end{frame}
+
 \end{document}
